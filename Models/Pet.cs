@@ -11,7 +11,7 @@ namespace TamagotchiAPI.Models
         public int HungerLevel { get; set; }
         public int HappinessLevel { get; set; }
 
-        public List<Pet> Pets { get; set; }
+        // public List<Pet> Pets { get; set; }
     }
 }
 
