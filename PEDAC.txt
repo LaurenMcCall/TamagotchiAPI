@@ -1,5 +1,6 @@
 Create a database with a table named Pets.
 
+// DONE
 Should use a POCO called Pet with the following columns:
 Id (int - automatic primary key)
 Name (string)
@@ -7,16 +8,19 @@ Birthday (DateTime)
 HungerLevel (int)
 HappinessLevel (int)
 
+// DONE
 Create a table named Playtimes that has the following columns:
 Id (int - automatic primary key)
 When (DateTime)
 PetId (int - foreign key to Pet)
 
+// DONE
 Create a table named Feedings that has the following columns:
 Id (int - automatic primary key)
 When (DateTime)
 PetId (int - foreign key to Pet)
 
+// DONE
 Create a table named Scoldings that has the following columns:
 Id (int - automatic primary key)
 When (DateTime)
