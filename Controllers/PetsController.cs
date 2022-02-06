@@ -172,6 +172,10 @@ namespace TamagotchiAPI.Controllers
                 {
                     return NotFound();
                 }
+                else if (playtimePet.IsDead == true)
+                {
+                    return Ok("This pet has died!");
+                }
                 else
                 {
                     playtimePet.HappinessLevel = playtimePet.HappinessLevel + 5;
@@ -200,6 +204,10 @@ namespace TamagotchiAPI.Controllers
                 if (feedPet == null)
                 {
                     return NotFound();
+                }
+                else if (feedPet.IsDead == true)
+                {
+                    return Ok("This pet has died!");
                 }
                 else
                 {
@@ -233,6 +241,10 @@ namespace TamagotchiAPI.Controllers
                 if (scoldPet == null)
                 {
                     return NotFound();
+                }
+                else if (scoldPet.IsDead == true)
+                {
+                    return Ok("This pet has died!");
                 }
                 else
                 {
