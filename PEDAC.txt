@@ -58,8 +58,17 @@ and the current time.
 
 Demonstrate the API works
 
-Using Insomnia, create three Pets. Include a screenshot containing the API request and the response. Post the image in the comment when turning in the assignment.
-Using Insomnia, create a playtime for one of your pets. Show the API request and the response. Post the image in the comment when turning in the assignment.
-Using Insomnia, create a feeding for one of your pets. Show the API request and the response. Post the image in the comment when turning in the assignment.
-Using Insomnia, create a scolding for one of your pets. Show the API request and the response. Post the image in the comment when turning in the assignment.
-Using Insomnia, show the details of all the pets. Show the API request and the response. Post the image in the comment when turning in the assignment.
+Using Insomnia, create three Pets. Include a screenshot containing the 
+API request and the response. Post the image in the comment when turning in the assignment.
+
+Using Insomnia, create a playtime for one of your pets. Show the API request 
+and the response. Post the image in the comment when turning in the assignment.
+
+Using Insomnia, create a feeding for one of your pets. Show the API request 
+and the response. Post the image in the comment when turning in the assignment.
+
+Using Insomnia, create a scolding for one of your pets. Show the API request 
+and the response. Post the image in the comment when turning in the assignment.
+
+Using Insomnia, show the details of all the pets. Show the API request and the 
+response. Post the image in the comment when turning in the assignment.

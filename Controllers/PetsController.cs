@@ -205,6 +205,10 @@ namespace TamagotchiAPI.Controllers
                 {
                     feedPet.HappinessLevel = feedPet.HappinessLevel + 3;
                     feedPet.HungerLevel = feedPet.HungerLevel - 5;
+                    if (feedPet.HungerLevel <= 0)
+                    {
+                        feedPet.HungerLevel = 0;
+                    }
                 }
                 pet.PetId = feedPet.Id;
 
@@ -233,6 +237,11 @@ namespace TamagotchiAPI.Controllers
                 else
                 {
                     scoldPet.HappinessLevel = scoldPet.HappinessLevel - 5;
+
+                    if (scoldPet.HappinessLevel <= 0)
+                    {
+                        scoldPet.HappinessLevel = 0;
+                    }
                 }
                 pet.PetId = scoldPet.Id;
 
