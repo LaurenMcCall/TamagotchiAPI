@@ -5,7 +5,7 @@ namespace TamagotchiAPI.Models
     public class Playtime
     {
         public int Id { get; set; }
-        public DateTime When { get; set; } = DateTime.Now;
+        public DateTime When { get; set; } = DateTime.Now.Date;
 
         // Foreign Key
         public int PetId { get; set; }
