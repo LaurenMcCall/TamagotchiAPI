@@ -37,7 +37,7 @@ namespace TamagotchiAPI.Controllers
             // them by row id and return them as a JSON array.
 
             // return await _context.Pets.OrderBy(row => row.Id).ToListAsync();
-            return await _context.Pets.OrderBy(row => row.Id).Include(pet => pet.Playtimes).ToListAsync();
+            return await _context.Pets.OrderBy(row => row.Id).Include(pet => pet.Playtimes).Include(pet => pet.Feedings).ToListAsync();
         }
 
         // GET: api/Pets/5
@@ -191,6 +191,34 @@ namespace TamagotchiAPI.Controllers
             }
         }
 
+        [HttpPost("{id}/Feedings")]
+        public async Task<ActionResult<Playtime>> CreateFeedingForPet(int id, Feeding pet)
+        {
+            {
+                var feedPet = await _context.Pets.FindAsync(id);
+
+                if (feedPet == null)
+                {
+                    return NotFound();
+                }
+                else
+                {
+                    feedPet.HappinessLevel = feedPet.HappinessLevel + 3;
+                    feedPet.HungerLevel = feedPet.HungerLevel - 5;
+                }
+                pet.PetId = feedPet.Id;
+
+
+
+                // Indicate to the database context we want to add this new record
+                _context.Feedings.Add(pet);
+                await _context.SaveChangesAsync();
+
+                // Return a response that indicates the object was created (status code `201`) and some additional
+                // headers with details of the newly created object.
+                return Ok(pet);
+            }
+        }
 
         // Private helper method that looks up an existing pet by the supplied id
         private bool PetExists(int id)
