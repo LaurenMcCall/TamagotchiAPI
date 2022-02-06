@@ -5,7 +5,7 @@ namespace TamagotchiAPI.Models
     public class Scolding
     {
         public int Id { get; set; }
-        public DateTime When { get; set; } = DateTime.Now.Date;
+        public DateTime When { get; set; } = DateTime.Now;
 
 
         // public void WhenDateOnly()
