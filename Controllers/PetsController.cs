@@ -35,7 +35,9 @@ namespace TamagotchiAPI.Controllers
         {
             // Uses the database context in `_context` to request all of the Pets, sort
             // them by row id and return them as a JSON array.
-            return await _context.Pets.OrderBy(row => row.Id).ToListAsync();
+
+            // return await _context.Pets.OrderBy(row => row.Id).ToListAsync();
+            return await _context.Pets.OrderBy(row => row.Id).Include(pet => pet.Playtimes).ToListAsync();
         }
 
         // GET: api/Pets/5
@@ -159,6 +161,29 @@ namespace TamagotchiAPI.Controllers
             // Return a copy of the deleted data
             return Ok(pet);
         }
+
+        [HttpPost("{id}/Playtimes")]
+        public async Task<ActionResult<Playtime>> CreatePlaytimeForPet(int id, Playtime pet)
+        {
+            {
+                var playtimePet = await _context.Pets.FindAsync(id);
+
+                if (playtimePet == null)
+                {
+                    return NotFound();
+                }
+                pet.PetId = playtimePet.Id;
+
+                // Indicate to the database context we want to add this new record
+                _context.Playtimes.Add(pet);
+                await _context.SaveChangesAsync();
+
+                // Return a response that indicates the object was created (status code `201`) and some additional
+                // headers with details of the newly created object.
+                return Ok(pet);
+            }
+        }
+
 
         // Private helper method that looks up an existing pet by the supplied id
         private bool PetExists(int id)
