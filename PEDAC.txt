@@ -41,11 +41,12 @@ HappinessLevel defaults to 0.
 // DONE
 DELETE /Pets/{id}, should delete a pet from the database by Id
 
-
+// DONE
 POST /Pets/{id}/Playtimes should find the pet by id and add five to its happiness level 
 and add three to its hunger level. It should also create a new 
 Playtime for this pet and the current time.
 
+// 
 POST /Pets/{id}/Feedings should find the pet by id and subtract five from its 
 hunger level and add three to its happiness level. It should also create a 
 new Feeding for this pet and the current time.
