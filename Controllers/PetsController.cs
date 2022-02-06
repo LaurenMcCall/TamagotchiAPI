@@ -172,7 +172,14 @@ namespace TamagotchiAPI.Controllers
                 {
                     return NotFound();
                 }
+                else
+                {
+                    playtimePet.HappinessLevel = playtimePet.HappinessLevel + 5;
+                    playtimePet.HungerLevel = playtimePet.HungerLevel + 3;
+                }
                 pet.PetId = playtimePet.Id;
+
+
 
                 // Indicate to the database context we want to add this new record
                 _context.Playtimes.Add(pet);
