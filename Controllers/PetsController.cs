@@ -40,6 +40,67 @@ namespace TamagotchiAPI.Controllers
             return await _context.Pets.OrderBy(row => row.Id).Include(pet => pet.Playtimes).Include(pet => pet.Feedings).Include(pet => pet.Scoldings).ToListAsync();
         }
 
+        // [HttpGet("{isDead}")]
+        // public async Task<ActionResult<IEnumerable<Pet>>> GetDeadPets(bool isDead)
+        // {
+        //     // Uses the database context in `_context` to request all of the Pets, sort
+        //     // them by row id and return them as a JSON array.
+        //     var pet = await _context.Pets.FindAsync(isDead);
+
+        //     // return await _context.Pets.OrderBy(row => row.Id).ToListAsync();
+        //     // return await _context.Pets.OrderBy(row => row.Id).Include(pet => pet.Playtimes).Include(pet => pet.Feedings).Include(pet => pet.Scoldings).Where(pet => pet.IsDead == true).ToListAsync();
+        //     if (isDead == true)
+        //     {
+        //         return await _context.Pets.Where(pet => pet.IsDead == true).ToListAsync();
+        //     }
+        //     return Ok();
+        // }
+        // [HttpGet("{isDead}")]
+        // public async Task<ActionResult<IEnumerable<Pet>>> GetDeadPets(bool isDead, Pet pet)
+        // {
+        //     // Uses the database context in `_context` to request all of the Pets, sort
+        //     // them by row id and return them as a JSON array.
+        //     var deadPet = await _context.Pets.FindAsync(isDead);
+
+        //     if (isDead == true)
+        //     {
+        //         return await _context.Pets.Where(pet => pet.IsDead == true).ToListAsync();
+        //     }
+        //     return Ok(pet);
+        // }
+        // [HttpPost("{id}/Playtimes")]
+        // public async Task<ActionResult<Playtime>> CreatePlaytimeForPet(int id, Playtime pet)
+        // {
+        //     {
+        //         var playtimePet = await _context.Pets.FindAsync(id);
+
+        //         if (playtimePet == null)
+        //         {
+        //             return NotFound();
+        //         }
+        //         else if (playtimePet.IsDead == true)
+        //         {
+        //             return Ok("This pet has died!");
+        //         }
+        //         else
+        //         {
+        //             playtimePet.HappinessLevel = playtimePet.HappinessLevel + 5;
+        //             playtimePet.HungerLevel = playtimePet.HungerLevel + 3;
+        //         }
+        //         pet.PetId = playtimePet.Id;
+
+
+
+        //         // Indicate to the database context we want to add this new record
+        //         _context.Playtimes.Add(pet);
+        //         await _context.SaveChangesAsync();
+
+        //         // Return a response that indicates the object was created (status code `201`) and some additional
+        //         // headers with details of the newly created object.
+        //         return Ok(pet);
+        //     }
+        // }
+
         // GET: api/Pets/5
         //
         // Fetches and returns a specific pet by finding it by id. The id is specified in the
